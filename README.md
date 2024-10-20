@@ -51,4 +51,13 @@ chmod +x backup_archives.sh
 ./backup_archives.sh
 
 
+## Team attendance report
 
+| Name             | status      |
+|------------------|-------------|
+| Paul Muwanguzi   | Present     |
+| Alain Ngabo      | Present     |
+| Gaju Keane       | Present     |
+| Norette Atete    | Present     |
+| Joella Teta      | Present     |
+|Silver Jr Nshuti  | Present     |
