@@ -13,7 +13,7 @@ Follow the steps below to set up and run the project:
 
 First, clone the project repository from GitHub.
 
-git clone https://github.com/FwyeFTiDjc2u92dk24Erk0hNGAe9cO3GWemk/heart-rate-monitor.git
+git clone https://personal_access_token@github.com/N-SilverJr/hospital_monitoring_group21.git
 cd heart-rate-monitor
 
 ## 2. Running the Heart Rate Monitoring Script
