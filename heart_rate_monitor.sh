@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
+# Prompt the user to enter a device name
 read -p "Enter device name: " device_name
 
+# Check if the heart_rate_log.txt file exists
 if [ ! -f  "heart_rate_log.txt" ]; then
+	# If the file does not exist, create it
         touch  "heart_rate_log.txt"
 else
         echo "The file already exists!"

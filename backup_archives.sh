@@ -1,25 +1,26 @@
 #!/usr/bin/env bash
-archived_directory="archived_logs_group21"
-host="09ccfd4f93b5.51efc529.alu-cod.online"
-username="09ccfd4f93b5"
 
-if [ ! -d "$archived_directory" ]; then
-	mkdir "$archived_directory"
-else
-        echo "Directory already exist"
+# Variables
+remote_host="0a0db15af199.6b7419f6.alu-cod.online"       # Replace with your sandbox host
+remote_user="0a0db15af199"      # Replace with your sandbox username
+remote_dir="/home/"                   # The directory on the remote server
+archLog="archived_logs_group21"         # Replace with your actual group number
+
+# Create the archive directory if it does not exist
+if [ ! -d "$archLog" ]; then
+  mkdir "$archLog"
+  echo "Directory $archLog created."
 fi
 
-for i in heart_rate_log.txt_*; do
-	if [ ! -f "$i" ]; then
-		echo "There is no file!"
-	else	
-		mv heart_rate_log.txt_* "$archived_directory"
-	fi
-done	
-scp -r $archived_directory "$username@$host":/home/
+# Move all archived log files into the designated directory
+mv heart_rate_log.txt_* "$archLog/"
+echo "Moved archived log files to $archLog."
 
-if [ $? -eq 0]; then
-	echo "The backup is successfull"
+# Back up the archived files to the remote server
+scp -r "$archLog/" "$remote_user@$remote_host:$remote_dir"
+if [ $? -eq 0 ]; then
+  echo "Backup successful!"
 else
-	echo "There are some errors, you might fix it quickly!"
-fi	
+  echo "Error during backup."
+fi
+
