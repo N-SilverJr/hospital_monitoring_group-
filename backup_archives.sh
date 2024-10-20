@@ -16,10 +16,5 @@ for i in heart_rate_log.txt_*; do
 		mv heart_rate_log.txt_* "$archived_directory"
 	fi
 done	
-scp -r $archived_directory "$username@$host":/home/
-
-if [ $? -eq 0]; then
-	echo "The backup is successfull"
-else
-	echo "There are some errors, you might fix it quickly"
-fi	
+scp -r $archived_directory "$username@$host":/home/ 
+echo "Backup was succesfull"
