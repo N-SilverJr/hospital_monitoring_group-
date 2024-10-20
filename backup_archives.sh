@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 archived_directory="archived_logs_group21"
-host="09ccfd4f93b5.51efc529.alu-cod.online"
-username="09ccfd4f93b5"
+host="cc91e1bce9ac.7b3ea1d9.alu-cod.online"
+username="cc91e1bce9ac"
 
 if [ ! -d "$archived_directory" ]; then
 	mkdir "$archived_directory"
@@ -21,5 +21,5 @@ scp -r $archived_directory "$username@$host":/home/
 if [ $? -eq 0]; then
 	echo "The backup is successfull"
 else
-	echo "There are some errors, you might fix it quickly!"
+	echo "There are some errors, you might fix it quickly"
 fi	
